@@ -1,0 +1,28 @@
+/* Header section */
+header {
+    background-color: #CCCCFF; /* periwinkle */
+}
+
+/* logo text */
+h1 {
+    /* style */
+    color: black;
+    font-family: 'Gill Sans', sans-serif;
+
+    /* positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* title text */
+h2 {
+    /* style */
+    color: black;
+    font-family: 'Gill Sans', sans-serif;
+
+    /* positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
