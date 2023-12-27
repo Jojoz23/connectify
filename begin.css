@@ -1,28 +1,70 @@
-/* Header section */
+/* Header */
 header {
-    background-color: #CCCCFF; /* periwinkle */
-}
+    background-color: #6565ec; /* Periwinkle (dark) */
+    padding: 20px;
+    text-align: center;
+  }
 
-/* logo text */
-h1 {
-    /* style */
-    color: black;
+/* Body */
+body {
     font-family: 'Gill Sans', sans-serif;
-
-    /* positioning */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ccccff; /* Periwinkle (light) */
+  }
+  
+  /* Multiple assignment */
+  h1,
+  h2 {
+    margin: 0;
+    color: black;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  /* Form container */
+  .container {
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* title text */
-h2 {
-    /* style */
-    color: black;
-    font-family: 'Gill Sans', sans-serif;
-
-    /* positioning */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    height: 80vh; /* Adjust the height as needed */
+  }
+  
+  /* Form styles */
+  .form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form input styles */
+  .form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Form button styles */
+  .form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ccccff; /* Periwinkle */
+    color: white;
+    cursor: pointer;
+  }
+  
