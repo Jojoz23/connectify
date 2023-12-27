@@ -52,7 +52,6 @@ class Account:
         # media
         self.posts = []
         self.__liked_posts = set()
-
     
     def like(self, post: Post) -> None:
         """
@@ -93,4 +92,39 @@ class Account:
             del post  # remove from memory
         else:
             raise LookupError("post cannot be deleted as it does not belong to this account.")
+
+    def follow(self, account: Account) -> None:
+        """
+        Follow another account.
+
+        Do nothing if this account already follows them.
+        """
+        if account not in self.following:
+            self.following.add(account)
+            self.num_following += 1
     
+    def unfollow(self, account: Account) -> None:
+        """
+        Unfollow another account.
+
+        Do nothing if this account does not follow them.
+        """
+        if account in self.following:
+            self.following.remove(account)
+            self.num_following -= 1
+        
+    def change_username(self, new_username: str) -> None:
+        """
+        Change this account's username to the specified one.
+
+        Precondition: new_username is not taken by another account.
+        """
+        self.username = new_username
+
+    def change_password(self, new_password: str) -> None:
+        """
+        Change this account's password to the specified one.
+
+        Precondition: password meets format requirements.
+        """
+        self.__password = new_password
