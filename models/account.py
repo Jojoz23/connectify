@@ -5,7 +5,7 @@ An Account represents a user on connectify.
 """
 
 from __future__ import annotations
-from post import Post
+from models.post import Post
 
 class Account:
     """
@@ -53,6 +53,12 @@ class Account:
         self.posts = []
         self.__liked_posts = set()
     
+    def passwordIsCorrect(self, attempt: str) -> bool:
+        """
+        Return True if and only if attempt matches password.
+        """
+        return attempt == self.__password
+
     def like(self, post: Post) -> None:
         """
         Like a post.
