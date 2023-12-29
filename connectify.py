@@ -2,7 +2,7 @@
 connectify application launcher. Opens in default browser.
 """
 
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 app.config["STATIC_FOLDER"] = 'static'  # set location of static folder
@@ -12,9 +12,9 @@ def index() -> str:
     """
     Log in/sign up page.
     """
-    return render_template('begin.html')
+    return render_template('sign_up.html')
 
-@app.route('/profile/<username>')
+@app.route('/profile.html/<username>')
 def user_profile(username: str) -> str:
     """
     Profile of specified username.
@@ -24,6 +24,26 @@ def user_profile(username: str) -> str:
 
     return render_template('profile.html', data=user_data)
 
+@app.route('/login')
+def login() -> str:
+    """
+    Log in page
+    """
+    return render_template('login.html')
+
+@app.route('/attempt_create_account', methods=["post"])
+def create_account() -> str:
+    """
+    Create the account with username and password from sign_up.html
+
+    Precondition: username is not taken by an existing account
+    """
+    username = request.form['username']
+    password = request.form['password']
+
+    print(f"username: {username}\npassword: {password}")
+    #return render_template(f'profile.html/{username}')
+    return "Profile page not implemented yet."
 
 if __name__ == '__main__':
     app.run(debug=True)
