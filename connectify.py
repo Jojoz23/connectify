@@ -34,14 +34,15 @@ def login() -> str:
 @app.route('/attempt_create_account', methods=["post"])
 def create_account() -> str:
     """
-    Create the account with username and password from sign_up.html
+    Create the account with emaio, username, and password from sign_up.html
 
     Precondition: username is not taken by an existing account
     """
     username = request.form['username']
     password = request.form['password']
+    email = request.form['email']
 
-    print(f"username: {username}\npassword: {password}")
+    print(f"username: {username}\npassword: {password}\nemail: {email}")
     #return render_template(f'profile.html/{username}')
     return "Profile page not implemented yet."
 

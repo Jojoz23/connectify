@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>connectify</title>
     <!--add a favicon (logo on the tab)-->
-    <link rel="stylesheet" href="begin.css">
-    <script src="begin.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign_up.css') }}">
+    <script src="{{ url_for('static', filename='js/sign_up.js') }}"></script>
 </head>
 <!--HEADER-->
 <header>
@@ -21,7 +21,16 @@
 </header>
 <!--BODY-->
 <body>
-    ...
+    <br><br>
+    <form action="/attempt_create_account" method="post">
+        <!--Username-->
+        Username<br>
+        <input type="text" id="username" name="username" placeholder="enter username"><br><br>
+        <!--Password-->
+        Password<br>
+        <input type="text" id="password" name="password" placeholder="enter password"><br><br>
+        <input type="submit" value="Login">
+    </form>
 </body>
 <!--FOOTER-->
 <footer>
