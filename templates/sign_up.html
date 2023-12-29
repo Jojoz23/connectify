@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>connectify</title>
+    <!--add a favicon (logo on the tab)-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign_up.css') }}">
+    <script src="{{ url_for('static', filename='js/sign_up.js') }}"></script>
+</head>
+<!--HEADER-->
+<header>
+    <h1>
+        <!--lowercase because minimalism-->
+        connectify
+    </h1>
+    <h2>
+        Create an Account
+    </h2>
+</header>
+<!--BODY-->
+<body>
+    <br><br>
+    <form action="/attempt_create_account" method="post">
+        <!--Email-->
+        Email<br>
+        <input type="text" id="email" name="email" placeholder="enter email"><br><br>
+        <!--Username-->
+        Username<br>
+        <input type="text" id="username" name="username" placeholder="enter username"><br><br>
+        <!--Password-->
+        Password<br>
+        <input type="text" id="password" name="password" placeholder="enter password"><br><br>
+        <input type="submit" value="Create Account">
+    </form>
+    <br>
+    Already have an account? <a href="/login">Login</a>
+</body>
+<!--FOOTER-->
+<footer>
+    ...
+</footer>
+</html>
